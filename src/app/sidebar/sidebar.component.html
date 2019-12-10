@@ -1,0 +1,27 @@
+<div class="sidebar" id="sidebar" *ngIf="url != 'auth' && url != 'career'">
+  <div class="sidebar-inner slimscroll-wrap" slimScroll [options]="opts">
+    <div id="sidebar-menu" class="sidebar-menu">
+      <ul *ngIf="homeView">
+        <li [ngClass]="[url === 'dashboard'? 'active' : 'inactive',url === ''? 'active' : 'inactive']">
+          <a routerLink="dashboard"><i class="fal fa-tachometer-fastest"></i> <span> Dashboard<em> SE</em></span></a>
+        </li>
+
+        <li class="submenu">
+          <a href="javascript:" [ngClass]="url === 'reports'? 'subdrop' : 'null'"><i class="la la-pie-chart"></i> <span>
+              Reports </span> <span class="menu-arrow"></span></a>
+          <ul class="list-unstyled" [ngClass]="url === 'reports'? 'submenu-block' : 'dsply-none'">
+            <li>
+              <a routerLink="reports/dafabet" [ngClass]="url2 === 'dafabet' ? 'active' : 'null'">all transactions </a>
+            </li>
+<!--            <li>-->
+<!--              <a routerLink="globalpay" [ngClass]="url2 === 'globalpay' ? 'active': 'null'"> globalpay</a>-->
+<!--            </li>-->
+          </ul>
+        </li>
+
+      </ul>
+
+    </div>
+    <div class="cover-bar"></div>
+  </div>
+</div>
